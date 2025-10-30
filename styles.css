@@ -1,0 +1,51 @@
+
+.container {
+    background-color: black;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    animation: moveCircle 10s linear infinite;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 30;
+}
+
+.circle:hover {
+    opacity: 0;     
+}
+
+@keyframes moveCircle {
+    0%   { top: 0; left: 0; }
+    25%  { top: 0; left: calc(100% - 100px); }
+    50%  { top: calc(100% - 100px); left: calc(100% - 100px); }
+    75%  { top: calc(100% - 100px); left: 0; }
+    100% { top: 0; left: 0; }
+}
+
+@keyframes fillBar {
+    0%   { width: 0%; }
+    100% { width: 100%; }
+}
+
+.loading-bar {
+    background-color: lightgray; 
+    position: fixed;
+    bottom: 20;
+    left: 0;
+    width: 30%;
+    margin-left: 30px;
+    margin-top: 15px;
+    height: 8%;
+    z-index: 10;
+}
+
+.loading-filler {
+    height: 100%;
+    width: 0%; 
+    background-color: rgb(0, 242, 255);
+    animation: fillBar 2s linear infinite;
+}
